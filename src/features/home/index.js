@@ -87,7 +87,10 @@ export class Home extends Component {
                 /> : <FlatList
                 key={1}
                 data={productList}
-                renderItem={({item, index})=> <Card index={index} item={item} />}
+                renderItem={({item, index})=> <>
+                <Card index={index} item={item} />
+                <View style={{...styles.borderLine, width: '95%'}}></View>
+                </>}
                 keyExtractor={item=> item.skuId }
             /> :<View style={styles.empty}><Text style={styles.emptymessage}>Selected products not available</Text></View>
                 }
